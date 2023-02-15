@@ -40,41 +40,41 @@ AFRAME.registerComponent("diver-rotation", {
 
     init: function(){
         window.addEventListener("keydown", (e) => {
-            var planeRotation = this.data.speedOfRotation;
+            var diverRotation = this.data.speedOfRotation;
             this.data.speedOfRotation = this.el.getAttribute("rotation");
 
-            var planePosition = this.data.speedOfAscent;
+            var diverPosition = this.data.speedOfAscent;
             this.data.speedOfAscent = this.el.getAttribute("position");
 
             if(e.key === "ArrowRight"){
-                if(planeRotation.y > 10){
-                    planeRotation.y -= 0.3;
+                if(diverRotation.y > 10){
+                  diverRotation.y -= 0.3;
 
-                    this.el.setAttribute("rotation", planeRotation);
+                  this.el.setAttribute("rotation", diverRotation);
                 }
             }
 
             if(e.key === "ArrowLeft"){
-                if(planeRotation.y > 10){
-                    planeRotation.y += 0.3;
+                if(diverRotation.y > 10){
+                  diverRotation.y += 0.3;
 
-                    this.el.setAttribute("rotation", planeRotation);
+                  this.el.setAttribute("rotation", diverRotation);
                 }
             }
 
             if(e.key === "ArrowUp"){
-                if(planePosition.y < 2){
-                    planePosition.y += 0.01;
+                if(diverPosition.y < 2){
+                  diverPosition.y += 0.01;
 
-                    this.el.setAttribute("position", planePosition);
+                  this.el.setAttribute("position", diverPosition);
                 }
             }
 
             if(e.key === "ArrowDown"){
-                if(planePosition.y > -2){
-                    planePosition.y -= 0.01;
+                if(diverPosition.y > -2){
+                  diverPosition.y -= 0.01;
 
-                    this.el.setAttribute("position", planePosition);
+                  this.el.setAttribute("position", diverPosition);
                 }
             }
         })
